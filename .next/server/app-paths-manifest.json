@@ -1,0 +1,8 @@
+{
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/(root)/page": "app/(root)/page.js",
+  "/(root)/create-sankatha/page": "app/(root)/create-sankatha/page.js",
+  "/(root)/activity/page": "app/(root)/activity/page.js",
+  "/(root)/communities/page": "app/(root)/communities/page.js",
+  "/(root)/search/page": "app/(root)/search/page.js"
+}
