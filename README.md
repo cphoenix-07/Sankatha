@@ -1,3 +1,6 @@
+Sankatha: Innovative social platform for diverse discussions on spirituality, science, cultures, and more. Amplifies marginalized voices, fosters inclusivity, and aims to catalyze positive societal change. Join for enlightened dialogue and community building.
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
