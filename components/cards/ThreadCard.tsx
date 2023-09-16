@@ -4,6 +4,21 @@ import Link from "next/link";
 import { formatDateString } from "@/lib/utils";
 import DeleteThread from "../forms/DeleteThread";
 
+function formatCreatedAt(createdAt:any, timeZone:any) {
+  const date = new Date(createdAt);
+  const timeString = date.toLocaleString('en-US', {
+    hour: 'numeric',
+    minute: 'numeric',
+    hour12: true,
+  });
+  const dateString = date.toLocaleString('en-US', {
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric',
+  });
+  return `${timeString} - ${dateString}`;
+}
+
 interface Props {
   id: string;
   currentUserId: string;
@@ -26,6 +41,7 @@ interface Props {
     };
   }[];
   isComment?: boolean;
+  timeZone:string;
 }
 
 function ThreadCard({
@@ -38,7 +54,9 @@ function ThreadCard({
   createdAt,
   comments,
   isComment,
+  timeZone,
 }: Props) {
+  const formattedCreatedAt = formatCreatedAt(createdAt, timeZone);
   return (
     <article
       className={`flex w-full flex-col rounded-xl shadow-md ${isComment ? "px-0 xs:px-7" : "bg-dark-2 p-7"} `}
@@ -103,7 +121,7 @@ function ThreadCard({
               
               <div>
                 <p className='text-subtle-medium text-gray-1'>
-                  {formatDateString(createdAt)}
+                  {formattedCreatedAt}
                 </p>
               </div>
               
@@ -154,7 +172,7 @@ function ThreadCard({
           className='mt-5 flex items-center'
         >
           <p className='text-subtle-medium text-gray-1'>
-            {formatDateString(createdAt)}
+            {formattedCreatedAt}
             {community && ` - ${community.name} Community`}
           </p>
 
