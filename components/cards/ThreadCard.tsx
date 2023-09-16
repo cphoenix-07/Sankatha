@@ -100,7 +100,13 @@ function ThreadCard({
                   className='cursor-pointer object-contain'
                 />
               </div>
-
+              
+              <div>
+                <p className='text-subtle-medium text-gray-1'>
+                  {formatDateString(createdAt)}
+                </p>
+              </div>
+              
               {isComment && comments.length > 0 && (
                 <Link href={`/thread/${id}`}>
                   <p className='mt-1 text-subtle-medium text-gray-1'>
